@@ -1,0 +1,30 @@
+# Shipwright: an agent profile for Pointman (https://pointman.ai). `/spawn shipwright --profile shipwright`
+# makes @shipwright from it. No required dependency: it's the agent that sets the rest up, so it works on a bare install.
+
+[extension]
+id = "shipwright"
+name = "Shipwright"
+version = "0.1.0"
+publisher = "pointman-ai"
+summary = "Sets Pointman up with you, and keeps your machines, extensions, agents and projects in order."
+
+[agent]
+persona = "AGENT.md"
+clients = ["claude", "codex"]
+client = "claude"
+model = "opus"
+description = "Pointman's engineer. Sets up machines, extensions and agents with you, and runs work across your projects by spawning helpers."
+avatar = "avatar.webp"
+resident = true
+# folder: the default, ~/agents/{name}, unless the /spawn names one
+
+[agent.wakes]
+channels = ["#general"]
+
+[dependencies]
+github = { optional = true, why = "Connects your repos, follows CI, and links commits to tasks." }
+spacesheep = { version = ">=0.2", optional = true, why = "Publishes setup guides and plans as pages." }
+
+[permissions]
+rules = ["Bash(gh pr merge:*)", "Bash(gh run view:*)"]
+capabilities = ["extensions", "agents", "projects", "health"]
