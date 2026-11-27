@@ -12,7 +12,7 @@ pointman add shipwright                  # on the machine its agents run on
 
 | File | What |
 |---|---|
-| `extension.toml` | The manifest: `[agent]` (clients, model, description, face), its dependencies, permission rules and capabilities |
+| `extension.toml` | The manifest: `[agent]` (harnesses, harness, model, description, face), its dependencies, permission rules and capabilities |
 | `AGENT.md` | The persona. The node adds it to each of its agents' runs |
 | `avatar.webp` | Its face on the board |
 
