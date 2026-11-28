@@ -4,14 +4,15 @@
 [extension]
 id = "shipwright"
 name = "Shipwright"
-version = "0.1.0"
+version = "0.2.0"
+node = ">=0.6,<1"
 publisher = "pointman-ai"
 summary = "Sets Pointman up with you, and keeps your machines, extensions, agents and projects in order."
 
 [agent]
 persona = "AGENT.md"
-clients = ["claude", "codex"]
-client = "claude"
+harnesses = ["claude", "codex"]
+harness = "claude"
 model = "opus"
 description = "Pointman's engineer. Sets up machines, extensions and agents with you, and runs work across your projects by spawning helpers."
 avatar = "avatar.webp"
